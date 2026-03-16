@@ -72,9 +72,9 @@
 
         // Build WebSocket URL with RunConfig options as query parameters
         function getWebSocketUrl() {
-          // Use wss:// for HTTPS pages, ws:// for HTTP (localhost development)
+          // Use wss:// for HTTPS pages, ws:// for HTTP 
           const wsProtocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-          const baseUrl = wsProtocol + "//" + window.location.host + "/ws/" + userId + "/" + sessionId;
+          const baseUrl = "wss://luminaforge-live-155418144770.us-south1.run.app/ws/" + userId + "/" + sessionId;
           const params = new URLSearchParams();
 
           // Add proactivity option if checked
@@ -784,7 +784,7 @@
         // Connect the dedicated video WebSocket (separate lane from audio)
         function connectVideoWebsocket() {
           const wsProtocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-          const videoUrl = wsProtocol + "//" + window.location.host + "/ws-video/" + userId + "/" + sessionId;
+          const videoUrl = "wss://luminaforge-live-155418144770.us-south1.run.app/ws-video/" + userId + "/" + sessionId;
           videoWebsocket = new WebSocket(videoUrl);
 
           videoWebsocket.onopen = () => {
